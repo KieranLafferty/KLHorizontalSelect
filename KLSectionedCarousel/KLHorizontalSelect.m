@@ -22,12 +22,11 @@
 #define kHeeadeArrowHypotenuse hypotf(kHeaderArrowWidth, kHeaderArrowWidth)
 #define kHeaderArrowFrame CGRectMake(kHeaderArrowXOffset, kHeaderArrowYOffset, kHeaderArrowSideLength, kHeaderArrowSideLength)
 
-#import "ConferenceLayoutAttributes.h"
-#import "KLCarouselViewController.h"
+#import "KLHorizontalSelect.h"
 #import <QuartzCore/QuartzCore.h>
 
 
-@implementation KLCarouselHeaderView
+@implementation KLHorizontalSelect
 + (float) hypotenuse {
     return (CGFloat)kHeaderArrowWidth / sqrt(2.0);
 }
@@ -38,13 +37,13 @@
         
         //Create the arrow by creating a box with hypotenuse equal to the width of the device
 
-        self.selectedIndicator = [[UIView alloc] initWithFrame: CGRectMake(0, 0, [KLCarouselHeaderView hypotenuse], [KLCarouselHeaderView hypotenuse])];
+        self.selectedIndicator = [[UIView alloc] initWithFrame: CGRectMake(0, 0, [KLHorizontalSelect hypotenuse], [KLHorizontalSelect hypotenuse])];
         [self.selectedIndicator setBackgroundColor: kHeaderGradientBottomColor];
         [self.selectedIndicator setTransform: CGAffineTransformMakeRotation(3*M_PI_4)];
         [self.selectedIndicator.layer setTransform: CATransform3DRotate(self.selectedIndicator.layer.transform, (1/4.0)*M_PI, 1.0, 1.0, 0.0)];
   
 
-        [self.selectedIndicator.layer setZPosition: - [KLCarouselHeaderView hypotenuse]/2.0];
+        [self.selectedIndicator.layer setZPosition: - [KLHorizontalSelect hypotenuse]/2.0];
         
         [self addSubview: self.selectedIndicator];
         

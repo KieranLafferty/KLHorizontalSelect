@@ -27,7 +27,7 @@
 -(void) didSelectItem:(UICollectionView*)collectionView item:(UICollectionViewCell*) cell;
 
 @end
-@interface KLCarouselHeaderView: UIView <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface KLHorizontalSelect: UIView <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView* collectionView;
 @property (nonatomic, strong) UIView* selectedIndicator;
 @property (nonatomic) BOOL selectedIndicatorHidden;

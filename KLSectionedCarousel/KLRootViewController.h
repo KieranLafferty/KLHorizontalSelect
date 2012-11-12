@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KLCarouselViewController.h"
+#import "KLHorizontalSelect.h"
 
 @interface KLRootViewController : UIViewController <KLCarouselHeaderViewDataSource, KLCarouselHeaderViewDelegate>
 - (IBAction)showHideButtonPressed:(id)sender;
-@property (nonatomic, strong) KLCarouselHeaderView* sectionHeader;
+@property (nonatomic, strong) KLHorizontalSelect* sectionHeader;
 @property (nonatomic, strong) NSArray* sectionData; 
 @end
