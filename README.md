@@ -43,14 +43,14 @@ Implement the optional delegate method for getting notified when a new item is s
 ## Config ##
 The visual appearance can be tweaked by changing the constants in <code>KLHorizontalSelect.m</code>:
 <code>
-#define kPickerHeight 120
-#define kHeaderImageSize 60.0
-#define kHeaderLabelHeight 20.0
-#define kHeaderGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
-#define kHeaderGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
+\#define kPickerHeight 120
+\#define kHeaderImageSize 60.0
+\#define kHeaderLabelHeight 20.0
+\#define kHeaderGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
+\#define kHeaderGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
 
 //Properties of the selected arrow
-#define kHeaderArrowWidth 40.0
+\#define kHeaderArrowWidth 40.0
 </code>
 
 ## Contact ##
