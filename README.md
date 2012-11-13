@@ -3,7 +3,7 @@ KLHorizontalSelect
 
 Scroll left and right on the section scroller to make a selection. Inspiration for this project came from 8tracks iPhone application
 
-~~Note: As of now, KLHorizontalSelect is intended for use with portrait orientation on iPhone/iPad/iPod Touch.~~
+Note: KLHorizontalSelect is intended for use with portrait orientation on iPhone/iPad/iPod Touch.
 
 [Check out the Demo](http://www.youtube.com/watch?v=uzWZG99SAF0&feature=youtube_gdata_player) *Excuse the graphics glitches and lag due to my slow computer.*
 
