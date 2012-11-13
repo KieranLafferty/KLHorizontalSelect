@@ -1,7 +1,7 @@
 KLHorizontalSelect
 =======
 
-<img src="https://github.com/KieranLafferty/KLHorizontalSelect/blob/master/Images/iPhoneScreenshot.png" />
+<img src="https://raw.github.com/KieranLafferty/KLHorizontalSelect/master/Images/iPhoneScreenshot.png" />
 
 Scroll left and right on the section scroller to make a selection. Inspiration for this project came from 8tracks iPhone application
 
