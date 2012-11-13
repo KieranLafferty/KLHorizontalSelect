@@ -15,42 +15,46 @@ Drag the included <code>RNSwipeViewController</code> folder into your project. T
 ## Usage ##
 
 Import the required file and declare your controller to conform to the HorizontalSelect datasource and delegate
-<code>#import "KLHorizontalSelect.h"
+<code>
+	\#import "KLHorizontalSelect.h"
 
-@interface KLRootViewController : UIViewController <KLHorizontalSelectDataSource, KLHorizontalSelectDelegate></code>
+	@interface KLRootViewController : UIViewController <KLHorizontalSelectDataSource, KLHorizontalSelectDelegate>
+</code>
 
 Implement the required methods of the data source 
 
-<code>-(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.sectionData count];
-}
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    [collectionView registerClass:[KLHeaderViewCell class] forCellWithReuseIdentifier:@"Cell"];
-    KLHeaderViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    NSDictionary* cellDictionary = [self.sectionData objectAtIndex:indexPath.row];
-    [cell.image setImage:[UIImage imageNamed: [cellDictionary objectForKey:@"image"]]];
-    [cell.label setText:[cellDictionary objectForKey:@"text"]];
-    return cell;
-}</code>
+<code>
+	-(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+	    return [self.sectionData count];
+	}
+	- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+	    [collectionView registerClass:[KLHeaderViewCell class] forCellWithReuseIdentifier:@"Cell"];
+	    KLHeaderViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+	    NSDictionary* cellDictionary = [self.sectionData objectAtIndex:indexPath.row];
+	    [cell.image setImage:[UIImage imageNamed: [cellDictionary objectForKey:@"image"]]];
+	    [cell.label setText:[cellDictionary objectForKey:@"text"]];
+	    return cell;
+	}
+</code>
 
 Implement the optional delegate method for getting notified when a new item is selected
-<code>-(void) didSelectItem:(UICollectionView*)collectionView item:(UICollectionViewCell*) cell {
-    KLHeaderViewCell* selectedCell = (KLHeaderViewCell*) cell;
+<code>
+	-(void) didSelectItem:(UICollectionView*)collectionView item:(UICollectionViewCell*) cell {
+	    KLHeaderViewCell* selectedCell = (KLHeaderViewCell*) cell;
     
-    NSLog(@"Selected: %@", selectedCell.label.text);
-}</code>
+	    NSLog(@"Selected: %@", selectedCell.label.text);
+	}
+</code>
 
 ## Config ##
 The visual appearance can be tweaked by changing the constants in <code>KLHorizontalSelect.m</code>:
 <code>
-\#define kPickerHeight 120 \n
-\#define kHeaderImageSize 60.0
-\#define kHeaderLabelHeight 20.0
-\#define kHeaderGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
-\#define kHeaderGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
-
-//Properties of the selected arrow
-\#define kHeaderArrowWidth 40.0
+	\#define kPickerHeight 120
+	\#define kHeaderImageSize 60.0
+	\#define kHeaderLabelHeight 20.0
+	\#define kHeaderGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
+	\#define kHeaderGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
+	\#define kHeaderArrowWidth 40.0
 </code>
 
 ## Contact ##
