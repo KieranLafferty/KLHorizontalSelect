@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "77CF0933164D75EB0078DE0C"
                BuildableName = "KLSectionedCarousel.app"
-               BlueprintName = "KLSectionedCarousel"
-               ReferencedContainer = "container:KLSectionedCarousel.xcodeproj">
+               BlueprintName = "KLHorizontalSelect"
+               ReferencedContainer = "container:KLHorizontalSelect.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "77CF095D164D75EC0078DE0C"
                BuildableName = "KLSectionedCarouselTests.octest"
-               BlueprintName = "KLSectionedCarouselTests"
-               ReferencedContainer = "container:KLSectionedCarousel.xcodeproj">
+               BlueprintName = "KLHorizontalSelectTests"
+               ReferencedContainer = "container:KLHorizontalSelect.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "77CF0933164D75EB0078DE0C"
             BuildableName = "KLSectionedCarousel.app"
-            BlueprintName = "KLSectionedCarousel"
-            ReferencedContainer = "container:KLSectionedCarousel.xcodeproj">
+            BlueprintName = "KLHorizontalSelect"
+            ReferencedContainer = "container:KLHorizontalSelect.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "77CF0933164D75EB0078DE0C"
             BuildableName = "KLSectionedCarousel.app"
-            BlueprintName = "KLSectionedCarousel"
-            ReferencedContainer = "container:KLSectionedCarousel.xcodeproj">
+            BlueprintName = "KLHorizontalSelect"
+            ReferencedContainer = "container:KLHorizontalSelect.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "77CF0933164D75EB0078DE0C"
             BuildableName = "KLSectionedCarousel.app"
-            BlueprintName = "KLSectionedCarousel"
-            ReferencedContainer = "container:KLSectionedCarousel.xcodeproj">
+            BlueprintName = "KLHorizontalSelect"
+            ReferencedContainer = "container:KLHorizontalSelect.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

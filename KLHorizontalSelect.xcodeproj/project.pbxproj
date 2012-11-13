@@ -82,23 +82,23 @@
 		770C33181651777000A25F67 /* home_icon_trending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_icon_trending.png; path = Images/home_icon_trending.png; sourceTree = "<group>"; };
 		770C33191651777000A25F67 /* home_icon_trending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_icon_trending@2x.png"; path = "Images/home_icon_trending@2x.png"; sourceTree = "<group>"; };
 		77407F151651CBC800918663 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		77CF0934164D75EB0078DE0C /* KLSectionedCarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KLSectionedCarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77CF0934164D75EB0078DE0C /* KLHorizontalSelect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KLHorizontalSelect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77CF0938164D75EB0078DE0C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		77CF093A164D75EB0078DE0C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		77CF093C164D75EB0078DE0C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		77CF0940164D75EB0078DE0C /* KLSectionedCarousel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KLSectionedCarousel-Info.plist"; sourceTree = "<group>"; };
+		77CF0940164D75EB0078DE0C /* KLHorizontalSelect-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KLHorizontalSelect-Info.plist"; sourceTree = "<group>"; };
 		77CF0942164D75EB0078DE0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		77CF0944164D75EB0078DE0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		77CF0946164D75EB0078DE0C /* KLSectionedCarousel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KLSectionedCarousel-Prefix.pch"; sourceTree = "<group>"; };
+		77CF0946164D75EB0078DE0C /* KLHorizontalSelect-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KLHorizontalSelect-Prefix.pch"; sourceTree = "<group>"; };
 		77CF0947164D75EB0078DE0C /* KLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLAppDelegate.h; sourceTree = "<group>"; };
 		77CF0948164D75EB0078DE0C /* KLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLAppDelegate.m; sourceTree = "<group>"; };
 		77CF094A164D75EB0078DE0C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		77CF094C164D75EB0078DE0C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		77CF094E164D75EB0078DE0C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		77CF0951164D75EB0078DE0C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		77CF095E164D75EC0078DE0C /* KLSectionedCarouselTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KLSectionedCarouselTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77CF095E164D75EC0078DE0C /* KLHorizontalSelectTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KLHorizontalSelectTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77CF095F164D75EC0078DE0C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		77CF0967164D75EC0078DE0C /* KLSectionedCarouselTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KLSectionedCarouselTests-Info.plist"; sourceTree = "<group>"; };
+		77CF0967164D75EC0078DE0C /* KLHorizontalSelectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KLHorizontalSelectTests-Info.plist"; sourceTree = "<group>"; };
 		77CF0969164D75EC0078DE0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		77CF096B164D75EC0078DE0C /* KLSectionedCarouselTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLSectionedCarouselTests.h; sourceTree = "<group>"; };
 		77CF096C164D75EC0078DE0C /* KLSectionedCarouselTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLSectionedCarouselTests.m; sourceTree = "<group>"; };
@@ -177,8 +177,8 @@
 		77CF0935164D75EB0078DE0C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				77CF0934164D75EB0078DE0C /* KLSectionedCarousel.app */,
-				77CF095E164D75EC0078DE0C /* KLSectionedCarouselTests.octest */,
+				77CF0934164D75EB0078DE0C /* KLHorizontalSelect.app */,
+				77CF095E164D75EC0078DE0C /* KLHorizontalSelectTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,10 +213,10 @@
 		77CF093F164D75EB0078DE0C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				77CF0940164D75EB0078DE0C /* KLSectionedCarousel-Info.plist */,
+				77CF0940164D75EB0078DE0C /* KLHorizontalSelect-Info.plist */,
 				77CF0941164D75EB0078DE0C /* InfoPlist.strings */,
 				77CF0944164D75EB0078DE0C /* main.m */,
-				77CF0946164D75EB0078DE0C /* KLSectionedCarousel-Prefix.pch */,
+				77CF0946164D75EB0078DE0C /* KLHorizontalSelect-Prefix.pch */,
 				77CF094A164D75EB0078DE0C /* Default.png */,
 				77CF094C164D75EB0078DE0C /* Default@2x.png */,
 				77CF094E164D75EB0078DE0C /* Default-568h@2x.png */,
@@ -237,7 +237,7 @@
 		77CF0966164D75EC0078DE0C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				77CF0967164D75EC0078DE0C /* KLSectionedCarouselTests-Info.plist */,
+				77CF0967164D75EC0078DE0C /* KLHorizontalSelectTests-Info.plist */,
 				77CF0968164D75EC0078DE0C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -246,9 +246,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		77CF0933164D75EB0078DE0C /* KLSectionedCarousel */ = {
+		77CF0933164D75EB0078DE0C /* KLHorizontalSelect */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77CF0970164D75EC0078DE0C /* Build configuration list for PBXNativeTarget "KLSectionedCarousel" */;
+			buildConfigurationList = 77CF0970164D75EC0078DE0C /* Build configuration list for PBXNativeTarget "KLHorizontalSelect" */;
 			buildPhases = (
 				77CF0930164D75EB0078DE0C /* Sources */,
 				77CF0931164D75EB0078DE0C /* Frameworks */,
@@ -258,14 +258,14 @@
 			);
 			dependencies = (
 			);
-			name = KLSectionedCarousel;
+			name = KLHorizontalSelect;
 			productName = KLSectionedCarousel;
-			productReference = 77CF0934164D75EB0078DE0C /* KLSectionedCarousel.app */;
+			productReference = 77CF0934164D75EB0078DE0C /* KLHorizontalSelect.app */;
 			productType = "com.apple.product-type.application";
 		};
-		77CF095D164D75EC0078DE0C /* KLSectionedCarouselTests */ = {
+		77CF095D164D75EC0078DE0C /* KLHorizontalSelectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77CF0973164D75EC0078DE0C /* Build configuration list for PBXNativeTarget "KLSectionedCarouselTests" */;
+			buildConfigurationList = 77CF0973164D75EC0078DE0C /* Build configuration list for PBXNativeTarget "KLHorizontalSelectTests" */;
 			buildPhases = (
 				77CF0959164D75EC0078DE0C /* Sources */,
 				77CF095A164D75EC0078DE0C /* Frameworks */,
@@ -277,9 +277,9 @@
 			dependencies = (
 				77CF0964164D75EC0078DE0C /* PBXTargetDependency */,
 			);
-			name = KLSectionedCarouselTests;
+			name = KLHorizontalSelectTests;
 			productName = KLSectionedCarouselTests;
-			productReference = 77CF095E164D75EC0078DE0C /* KLSectionedCarouselTests.octest */;
+			productReference = 77CF095E164D75EC0078DE0C /* KLHorizontalSelectTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +292,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Kieran Lafferty";
 			};
-			buildConfigurationList = 77CF092E164D75EB0078DE0C /* Build configuration list for PBXProject "KLSectionedCarousel" */;
+			buildConfigurationList = 77CF092E164D75EB0078DE0C /* Build configuration list for PBXProject "KLHorizontalSelect" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -304,8 +304,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				77CF0933164D75EB0078DE0C /* KLSectionedCarousel */,
-				77CF095D164D75EC0078DE0C /* KLSectionedCarouselTests */,
+				77CF0933164D75EB0078DE0C /* KLHorizontalSelect */,
+				77CF095D164D75EC0078DE0C /* KLHorizontalSelectTests */,
 			);
 		};
 /* End PBXProject section */
@@ -396,7 +396,7 @@
 /* Begin PBXTargetDependency section */
 		77CF0964164D75EC0078DE0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 77CF0933164D75EB0078DE0C /* KLSectionedCarousel */;
+			target = 77CF0933164D75EB0078DE0C /* KLHorizontalSelect */;
 			targetProxy = 77CF0963164D75EC0078DE0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -482,10 +482,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KLSectionedCarousel/KLSectionedCarousel-Prefix.pch";
-				INFOPLIST_FILE = "KLSectionedCarousel/KLSectionedCarousel-Info.plist";
+				GCC_PREFIX_HEADER = "KLSectionedCarousel/KLHorizontalSelect-Prefix.pch";
+				INFOPLIST_FILE = "KLSectionedCarousel/KLHorizontalSelect-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KLHorizontalSelect;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -495,10 +495,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KLSectionedCarousel/KLSectionedCarousel-Prefix.pch";
-				INFOPLIST_FILE = "KLSectionedCarousel/KLSectionedCarousel-Info.plist";
+				GCC_PREFIX_HEADER = "KLSectionedCarousel/KLHorizontalSelect-Prefix.pch";
+				INFOPLIST_FILE = "KLSectionedCarousel/KLHorizontalSelect-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KLHorizontalSelect;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -514,8 +514,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KLSectionedCarousel/KLSectionedCarousel-Prefix.pch";
-				INFOPLIST_FILE = "KLSectionedCarouselTests/KLSectionedCarouselTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "KLSectionedCarouselTests/KLHorizontalSelectTests-Info.plist";
+				PRODUCT_NAME = KLHorizontalSelectTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -531,8 +531,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KLSectionedCarousel/KLSectionedCarousel-Prefix.pch";
-				INFOPLIST_FILE = "KLSectionedCarouselTests/KLSectionedCarouselTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "KLSectionedCarouselTests/KLHorizontalSelectTests-Info.plist";
+				PRODUCT_NAME = KLHorizontalSelectTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -541,7 +541,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		77CF092E164D75EB0078DE0C /* Build configuration list for PBXProject "KLSectionedCarousel" */ = {
+		77CF092E164D75EB0078DE0C /* Build configuration list for PBXProject "KLHorizontalSelect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				77CF096E164D75EC0078DE0C /* Debug */,
@@ -550,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77CF0970164D75EC0078DE0C /* Build configuration list for PBXNativeTarget "KLSectionedCarousel" */ = {
+		77CF0970164D75EC0078DE0C /* Build configuration list for PBXNativeTarget "KLHorizontalSelect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				77CF0971164D75EC0078DE0C /* Debug */,
@@ -559,7 +559,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77CF0973164D75EC0078DE0C /* Build configuration list for PBXNativeTarget "KLSectionedCarouselTests" */ = {
+		77CF0973164D75EC0078DE0C /* Build configuration list for PBXNativeTarget "KLHorizontalSelectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				77CF0974164D75EC0078DE0C /* Debug */,
