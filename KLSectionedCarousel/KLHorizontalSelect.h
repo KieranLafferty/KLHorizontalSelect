@@ -16,13 +16,13 @@
 @end
 
 
-@protocol KLCarouselHeaderViewDataSource <NSObject>
+@protocol KLHorizontalSelectDataSource <NSObject>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 @end
-@protocol KLCarouselHeaderViewDelegate <NSObject>
+@protocol KLHorizontalSelectDelegate <NSObject>
 @optional
 -(void) didSelectItem:(UICollectionView*)collectionView item:(UICollectionViewCell*) cell;
 
@@ -32,8 +32,8 @@
 @property (nonatomic, strong) UIView* selectedIndicator;
 @property (nonatomic) BOOL selectedIndicatorHidden;
 @property (nonatomic, strong) KLGradientView* sectionStage;
-@property (nonatomic, strong) id<KLCarouselHeaderViewDelegate> delegate;
-@property (nonatomic, strong) id<KLCarouselHeaderViewDataSource> dataSource;
+@property (nonatomic, strong) id<KLHorizontalSelectDelegate> delegate;
+@property (nonatomic, strong) id<KLHorizontalSelectDataSource> dataSource;
 
 -(void) hideSelected:(BOOL) animated;
 -(void) showSelected:(BOOL) animated;
