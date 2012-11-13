@@ -33,7 +33,7 @@
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:10/255.0 green:37/255.0 blue:70/255.0 alpha:1]];
     
     
-    self.sectionHeader = [[KLHorizontalSelect alloc] initWithFrame:CGRectMake(0, 0, 320, 120)];
+    self.sectionHeader = [[KLHorizontalSelect alloc] initWithFrame:self.view.bounds];
     [self.sectionHeader setDataSource:self];
     [self.sectionHeader setDelegate:self];
     [self.view addSubview: self.sectionHeader];

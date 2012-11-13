@@ -28,6 +28,7 @@
 		770C332B1651777000A25F67 /* home_icon_tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 770C33171651777000A25F67 /* home_icon_tag@2x.png */; };
 		770C332C1651777000A25F67 /* home_icon_trending.png in Resources */ = {isa = PBXBuildFile; fileRef = 770C33181651777000A25F67 /* home_icon_trending.png */; };
 		770C332D1651777000A25F67 /* home_icon_trending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 770C33191651777000A25F67 /* home_icon_trending@2x.png */; };
+		77407F161651CBC800918663 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77407F151651CBC800918663 /* MainStoryboard_iPad.storyboard */; };
 		77CF0939164D75EB0078DE0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77CF0938164D75EB0078DE0C /* UIKit.framework */; };
 		77CF093B164D75EB0078DE0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77CF093A164D75EB0078DE0C /* Foundation.framework */; };
 		77CF093D164D75EB0078DE0C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77CF093C164D75EB0078DE0C /* CoreGraphics.framework */; };
@@ -80,6 +81,7 @@
 		770C33171651777000A25F67 /* home_icon_tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_icon_tag@2x.png"; path = "Images/home_icon_tag@2x.png"; sourceTree = "<group>"; };
 		770C33181651777000A25F67 /* home_icon_trending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_icon_trending.png; path = Images/home_icon_trending.png; sourceTree = "<group>"; };
 		770C33191651777000A25F67 /* home_icon_trending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_icon_trending@2x.png"; path = "Images/home_icon_trending@2x.png"; sourceTree = "<group>"; };
+		77407F151651CBC800918663 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		77CF0934164D75EB0078DE0C /* KLSectionedCarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KLSectionedCarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77CF0938164D75EB0078DE0C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		77CF093A164D75EB0078DE0C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -198,6 +200,7 @@
 				77CF0947164D75EB0078DE0C /* KLAppDelegate.h */,
 				77CF0948164D75EB0078DE0C /* KLAppDelegate.m */,
 				77CF0950164D75EB0078DE0C /* MainStoryboard.storyboard */,
+				77407F151651CBC800918663 /* MainStoryboard_iPad.storyboard */,
 				77CF098C164D83760078DE0C /* KLRootViewController.h */,
 				77CF098D164D83760078DE0C /* KLRootViewController.m */,
 				77CF093F164D75EB0078DE0C /* Supporting Files */,
@@ -338,6 +341,7 @@
 				770C332B1651777000A25F67 /* home_icon_tag@2x.png in Resources */,
 				770C332C1651777000A25F67 /* home_icon_trending.png in Resources */,
 				770C332D1651777000A25F67 /* home_icon_trending@2x.png in Resources */,
+				77407F161651CBC800918663 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +484,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KLSectionedCarousel/KLSectionedCarousel-Prefix.pch";
 				INFOPLIST_FILE = "KLSectionedCarousel/KLSectionedCarousel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -491,7 +497,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KLSectionedCarousel/KLSectionedCarousel-Prefix.pch";
 				INFOPLIST_FILE = "KLSectionedCarousel/KLSectionedCarousel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

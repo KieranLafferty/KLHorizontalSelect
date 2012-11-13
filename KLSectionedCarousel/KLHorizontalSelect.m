@@ -7,20 +7,15 @@
 //
 
 
-
-#define kHeaderWidth 320.0
+#define kPickerHeight 120
 #define kHeaderImageSize 60.0
 #define kHeaderLabelHeight 20.0
-#define kScreenWidth 320.0
 #define kHeaderGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
 #define kHeaderGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
 
 //Properties of the selected arrow
 #define kHeaderArrowWidth 40.0
-#define kHeaderArrowOffset 20.0
-#define kHeaderArrowXOffset (kScreenWidth)/2.0 - kHeaderArrowWidth/2.0
-#define kHeeadeArrowHypotenuse hypotf(kHeaderArrowWidth, kHeaderArrowWidth)
-#define kHeaderArrowFrame CGRectMake(kHeaderArrowXOffset, kHeaderArrowYOffset, kHeaderArrowSideLength, kHeaderArrowSideLength)
+
 
 #import "KLHorizontalSelect.h"
 #import <QuartzCore/QuartzCore.h>
@@ -48,18 +43,18 @@
         [self addSubview: self.selectedIndicator];
         
         //Create the gradient stage to place the information on
-        self.sectionStage = [[KLGradientView alloc] initWithFrame: CGRectMake(0, 0, kScreenWidth, frame.size.height - kHeaderArrowOffset)
+        self.sectionStage = [[KLGradientView alloc] initWithFrame: CGRectMake(0, 0, frame.size.width, kPickerHeight - [KLHorizontalSelect hypotenuse])
                                                          topColor: kHeaderGradientTopColor
                                                       bottomColor: kHeaderGradientBottomColor];
         [self addSubview: self.sectionStage];
-        [self.selectedIndicator setCenter:CGPointMake(kScreenWidth/2.0, self.sectionStage.frame.size.height)];
+        [self.selectedIndicator setCenter:CGPointMake(self.frame.size.width/2.0, self.sectionStage.frame.size.height)];
         //Add the collectionview to the stage
         
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
         [flowLayout setItemSize:CGSizeMake(kHeaderImageSize + 20, kHeaderImageSize + kHeaderLabelHeight)];
         [flowLayout setMinimumInteritemSpacing:0.f];
-        CGFloat edgeInset = kScreenWidth/2.0 - flowLayout.itemSize.width/2.0;
+        CGFloat edgeInset = self.frame.size.width/2.0 - flowLayout.itemSize.width/2.0;
         [flowLayout setSectionInset: UIEdgeInsetsMake(0, edgeInset, 0, edgeInset)];
         [flowLayout setMinimumLineSpacing:0.f];
         
@@ -121,8 +116,8 @@
     //Get center most cell
     //Get center most visible cell
     NSIndexPath* centerCellIndex = nil;
-    NSInteger centerX = kScreenWidth/2;
-    NSInteger smallestDistance = kScreenWidth;
+    NSInteger centerX = self.frame.size.width/2;
+    NSInteger smallestDistance = self.frame.size.width;
     for (UICollectionViewCell* cell in [self.collectionView visibleCells]) {
 
         //Get the center coordinate of the cell
@@ -159,7 +154,7 @@
             }];
         }
         else {
-            [self.selectedIndicator setCenter:CGPointMake(self.selectedIndicator.center.x, self.selectedIndicator.center.y - kHeaderArrowOffset)];
+            [self.selectedIndicator setCenter:CGPointMake(self.selectedIndicator.center.x, self.selectedIndicator.center.y - [KLHorizontalSelect hypotenuse])];
         }
     }
  
@@ -177,7 +172,7 @@
             }];
         }
         else {
-            [self.selectedIndicator setCenter:CGPointMake(self.selectedIndicator.center.x, self.selectedIndicator.center.y + kHeaderArrowOffset)];
+            [self.selectedIndicator setCenter:CGPointMake(self.selectedIndicator.center.x, self.selectedIndicator.center.y + [KLHorizontalSelect hypotenuse])];
         }
     }
     self.selectedIndicatorHidden = NO;

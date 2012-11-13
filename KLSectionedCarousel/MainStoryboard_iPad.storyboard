@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6JM-kr-tjT">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="7vZ-Ci-dIv">
+            <objects>
+                <navigationController id="6JM-kr-tjT" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ysW-xa-UQi">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="txB-4R-kxc" kind="relationship" relationship="rootViewController" id="yrS-ma-M4b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khV-f3-hJV" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-363" y="51"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="bvS-Ch-wbo">
+            <objects>
+                <viewController id="txB-4R-kxc" customClass="KLRootViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="97g-0u-hmc">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="home_background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xfy-Ma-1I1">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="773" id="Fnv-Lo-nwX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xfy-Ma-1I1" firstAttribute="leading" secondItem="97g-0u-hmc" secondAttribute="leading" type="default" id="OXr-pl-kTH"/>
+                            <constraint firstItem="xfy-Ma-1I1" firstAttribute="bottom" secondItem="97g-0u-hmc" secondAttribute="bottom" type="default" id="Vi1-Te-TCO"/>
+                            <constraint firstItem="xfy-Ma-1I1" firstAttribute="top" secondItem="97g-0u-hmc" secondAttribute="top" type="default" id="m0q-8s-eHA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WEs-Jf-6Ep">
+                        <barButtonItem key="rightBarButtonItem" title="Show/Hide" id="JMp-aE-cCA">
+                            <connections>
+                                <action selector="showHideButtonPressed:" destination="txB-4R-kxc" id="5wv-bj-XhT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tKo-5O-xqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="520" y="51"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home_background.jpg" width="320" height="568"/>
+    </resources>
+    <classes>
+        <class className="KLRootViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KLRootViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showHideButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
