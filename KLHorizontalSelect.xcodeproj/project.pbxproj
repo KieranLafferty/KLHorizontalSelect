@@ -43,7 +43,7 @@
 		77CF0961164D75EC0078DE0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77CF0938164D75EB0078DE0C /* UIKit.framework */; };
 		77CF0962164D75EC0078DE0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77CF093A164D75EB0078DE0C /* Foundation.framework */; };
 		77CF096A164D75EC0078DE0C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77CF0968164D75EC0078DE0C /* InfoPlist.strings */; };
-		77CF096D164D75EC0078DE0C /* KLSectionedCarouselTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CF096C164D75EC0078DE0C /* KLSectionedCarouselTests.m */; };
+		77CF096D164D75EC0078DE0C /* KLHorizontalSelectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CF096C164D75EC0078DE0C /* KLHorizontalSelectTests.m */; };
 		77CF0978164D762D0078DE0C /* KLHorizontalSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CF0977164D762D0078DE0C /* KLHorizontalSelect.m */; };
 		77CF098B164D82250078DE0C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77CF098A164D82250078DE0C /* QuartzCore.framework */; };
 		77CF098E164D83760078DE0C /* KLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CF098D164D83760078DE0C /* KLRootViewController.m */; };
@@ -100,8 +100,8 @@
 		77CF095F164D75EC0078DE0C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		77CF0967164D75EC0078DE0C /* KLHorizontalSelectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KLHorizontalSelectTests-Info.plist"; sourceTree = "<group>"; };
 		77CF0969164D75EC0078DE0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		77CF096B164D75EC0078DE0C /* KLSectionedCarouselTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLSectionedCarouselTests.h; sourceTree = "<group>"; };
-		77CF096C164D75EC0078DE0C /* KLSectionedCarouselTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLSectionedCarouselTests.m; sourceTree = "<group>"; };
+		77CF096B164D75EC0078DE0C /* KLHorizontalSelectTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLHorizontalSelectTests.h; sourceTree = "<group>"; };
+		77CF096C164D75EC0078DE0C /* KLHorizontalSelectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLHorizontalSelectTests.m; sourceTree = "<group>"; };
 		77CF0976164D762D0078DE0C /* KLHorizontalSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLHorizontalSelect.h; sourceTree = "<group>"; };
 		77CF0977164D762D0078DE0C /* KLHorizontalSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLHorizontalSelect.m; sourceTree = "<group>"; };
 		77CF098A164D82250078DE0C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -134,6 +134,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77407F171651D1A400918663 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				77CF0947164D75EB0078DE0C /* KLAppDelegate.h */,
+				77CF0948164D75EB0078DE0C /* KLAppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
 		7793EC79164D8B5B00E5EDD9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,9 +175,8 @@
 			children = (
 				770C32FF1651733200A25F67 /* SectionData.plist */,
 				7793EC79164D8B5B00E5EDD9 /* Images */,
-				77CF098A164D82250078DE0C /* QuartzCore.framework */,
-				77CF093E164D75EB0078DE0C /* KLSectionedCarousel */,
-				77CF0965164D75EC0078DE0C /* KLSectionedCarouselTests */,
+				77CF093E164D75EB0078DE0C /* KLHorizontalSelect */,
+				77CF0965164D75EC0078DE0C /* KLHorizontalSelectTests */,
 				77CF0937164D75EB0078DE0C /* Frameworks */,
 				77CF0935164D75EB0078DE0C /* Products */,
 			);
@@ -186,6 +194,7 @@
 		77CF0937164D75EB0078DE0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				77CF098A164D82250078DE0C /* QuartzCore.framework */,
 				77CF0938164D75EB0078DE0C /* UIKit.framework */,
 				77CF093A164D75EB0078DE0C /* Foundation.framework */,
 				77CF093C164D75EB0078DE0C /* CoreGraphics.framework */,
@@ -194,19 +203,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		77CF093E164D75EB0078DE0C /* KLSectionedCarousel */ = {
+		77CF093E164D75EB0078DE0C /* KLHorizontalSelect */ = {
 			isa = PBXGroup;
 			children = (
-				77CF0947164D75EB0078DE0C /* KLAppDelegate.h */,
-				77CF0948164D75EB0078DE0C /* KLAppDelegate.m */,
 				77CF0950164D75EB0078DE0C /* MainStoryboard.storyboard */,
 				77407F151651CBC800918663 /* MainStoryboard_iPad.storyboard */,
+				77407F171651D1A400918663 /* Delegate */,
 				77CF098C164D83760078DE0C /* KLRootViewController.h */,
 				77CF098D164D83760078DE0C /* KLRootViewController.m */,
 				77CF093F164D75EB0078DE0C /* Supporting Files */,
 				77CF0976164D762D0078DE0C /* KLHorizontalSelect.h */,
 				77CF0977164D762D0078DE0C /* KLHorizontalSelect.m */,
 			);
+			name = KLHorizontalSelect;
 			path = KLSectionedCarousel;
 			sourceTree = "<group>";
 		};
@@ -224,13 +233,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		77CF0965164D75EC0078DE0C /* KLSectionedCarouselTests */ = {
+		77CF0965164D75EC0078DE0C /* KLHorizontalSelectTests */ = {
 			isa = PBXGroup;
 			children = (
-				77CF096B164D75EC0078DE0C /* KLSectionedCarouselTests.h */,
-				77CF096C164D75EC0078DE0C /* KLSectionedCarouselTests.m */,
+				77CF096B164D75EC0078DE0C /* KLHorizontalSelectTests.h */,
+				77CF096C164D75EC0078DE0C /* KLHorizontalSelectTests.m */,
 				77CF0966164D75EC0078DE0C /* Supporting Files */,
 			);
+			name = KLHorizontalSelectTests;
 			path = KLSectionedCarouselTests;
 			sourceTree = "<group>";
 		};
@@ -387,7 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77CF096D164D75EC0078DE0C /* KLSectionedCarouselTests.m in Sources */,
+				77CF096D164D75EC0078DE0C /* KLHorizontalSelectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

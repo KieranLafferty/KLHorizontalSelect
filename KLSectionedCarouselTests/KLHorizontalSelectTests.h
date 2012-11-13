@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface KLSectionedCarouselTests : SenTestCase
+@interface KLHorizontalSelectTests : SenTestCase
 
 @end

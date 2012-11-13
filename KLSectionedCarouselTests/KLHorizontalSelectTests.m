@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Kieran Lafferty. All rights reserved.
 //
 
-#import "KLSectionedCarouselTests.h"
+#import "KLHorizontalSelectTests.h"
 
-@implementation KLSectionedCarouselTests
+@implementation KLHorizontalSelectTests
 
 - (void)setUp
 {
