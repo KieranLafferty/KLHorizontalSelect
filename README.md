@@ -1,6 +1,8 @@
 KLHorizontalSelect
 =======
 
+<img src="https://github.com/KieranLafferty/KLHorizontalSelect/blob/master/Images/iPhoneScreenshot.png" />
+
 Scroll left and right on the section scroller to make a selection. Inspiration for this project came from 8tracks iPhone application
 
 Note: KLHorizontalSelect is intended for use with portrait orientation on iPhone/iPad/iPod Touch.
