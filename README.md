@@ -38,7 +38,7 @@ Implement the required methods of the data source
 	    return cell;
 	}
 
-Implement the optional delegate method for getting notified when a new item is selected
+Implement the optional delegate method to be notified when a new item is selected
 
 	-(void) didSelectItem:(UICollectionView*)collectionView item:(UICollectionViewCell*) cell {
 	    KLHeaderViewCell* selectedCell = (KLHeaderViewCell*) cell;
