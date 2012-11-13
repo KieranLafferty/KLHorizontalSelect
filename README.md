@@ -9,21 +9,21 @@ Note: KLHorizontalSelect is intended for use with portrait orientation on iPhone
 
 ## Installation ##
 
-Drag the included <code>RNSwipeViewController</code> folder into your project. Then, include the following frameworks under *Link Binary With Libraries*:
+Drag the included <code>KLHorizontalSelect.h, KLHorizontalSelect.m</code> files into your project. Then, include the following frameworks under *Link Binary With Libraries*:
 
 * QuartzCore.framework
+
 ## Usage ##
 
 Import the required file and declare your controller to conform to the HorizontalSelect datasource and delegate
-<code>
-	\#import "KLHorizontalSelect.h"
+
+	#import "KLHorizontalSelect.h"
 
 	@interface KLRootViewController : UIViewController <KLHorizontalSelectDataSource, KLHorizontalSelectDelegate>
-</code>
+
 
 Implement the required methods of the data source 
 
-<code>
 	-(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 	    return [self.sectionData count];
 	}
@@ -35,27 +35,25 @@ Implement the required methods of the data source
 	    [cell.label setText:[cellDictionary objectForKey:@"text"]];
 	    return cell;
 	}
-</code>
 
 Implement the optional delegate method for getting notified when a new item is selected
-<code>
+
 	-(void) didSelectItem:(UICollectionView*)collectionView item:(UICollectionViewCell*) cell {
 	    KLHeaderViewCell* selectedCell = (KLHeaderViewCell*) cell;
     
 	    NSLog(@"Selected: %@", selectedCell.label.text);
 	}
-</code>
 
 ## Config ##
 The visual appearance can be tweaked by changing the constants in <code>KLHorizontalSelect.m</code>:
-<code>
-	\#define kPickerHeight 120
-	\#define kHeaderImageSize 60.0
-	\#define kHeaderLabelHeight 20.0
-	\#define kHeaderGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
-	\#define kHeaderGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
-	\#define kHeaderArrowWidth 40.0
-</code>
+
+	#define kPickerHeight 120
+	#define kHeaderImageSize 60.0
+	#define kHeaderLabelHeight 20.0
+	#define kHeaderGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
+	#define kHeaderGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
+	#define kHeaderArrowWidth 40.0
+
 
 ## Contact ##
 
