@@ -25,6 +25,32 @@
 + (float) hypotenuse {
     return (CGFloat)kHeaderArrowWidth / sqrt(2.0);
 }
+-(void) setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    if (self.sectionStage) {
+        [self.sectionStage setFrame: CGRectMake(0, 0, frame.size.width, kPickerHeight - [KLHorizontalSelect hypotenuse])];
+    }
+    if (self.selectedIndicator) {
+        [self.selectedIndicator setFrame:CGRectMake(0, 0, [KLHorizontalSelect hypotenuse], [KLHorizontalSelect hypotenuse])];
+        [self.selectedIndicator setCenter:CGPointMake(frame.size.width/2.0, self.sectionStage.frame.size.height)];
+
+    }
+    if  (self.collectionView) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+        [flowLayout setItemSize:CGSizeMake(kHeaderImageSize + 20, kHeaderImageSize + kHeaderLabelHeight)];
+        [flowLayout setMinimumInteritemSpacing:0.f];
+        CGFloat edgeInset = self.frame.size.width/2.0 - flowLayout.itemSize.width/2.0;
+        [flowLayout setSectionInset: UIEdgeInsetsMake(0, edgeInset, 0, edgeInset)];
+        [flowLayout setMinimumLineSpacing:0.f];
+        [self.collectionView setCollectionViewLayout:flowLayout];
+        [self.collectionView setFrame: CGRectMake(0, self.sectionStage.frame.size.height/2.0 - flowLayout.itemSize.height/2.0, self.sectionStage.bounds.size.width, flowLayout.itemSize.height) ];
+    }
+
+    [self.collectionView scrollToItemAtIndexPath:self.selectedIndex
+                                atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                                        animated:YES];
+}
 -(id) initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         //Configure the views properties
@@ -69,6 +95,8 @@
         [self.collectionView setDelegate: self];
         [self.sectionStage addSubview: self.collectionView];
     
+        //Initialize the selected index to the first position
+        self.selectedIndex = [NSIndexPath indexPathForRow:0 inSection:0];
     }
     return self;
 }
@@ -92,6 +120,8 @@
 
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    self.selectedIndex = indexPath;
+    
     [collectionView scrollToItemAtIndexPath: indexPath
                            atScrollPosition: UICollectionViewScrollPositionCenteredHorizontally
                                    animated: YES];

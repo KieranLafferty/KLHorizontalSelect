@@ -37,8 +37,22 @@
     [self.sectionHeader setDataSource:self];
     [self.sectionHeader setDelegate:self];
     [self.view addSubview: self.sectionHeader];
+    
 }
-
+-(void) viewWillAppear:(BOOL)animated {
+    //Register for device orientation changes to resize if necessary
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+	
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didRotate:)
+                                                 name:@"UIDeviceOrientationDidChangeNotification" object:nil];
+}
+-(void) viewWillDisappear:(BOOL)animated {
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+}
+-(void) didRotate: (id) sender {
+    [self.sectionHeader setFrame:self.view.bounds];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

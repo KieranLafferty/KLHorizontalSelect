@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6JM-kr-tjT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="6JM-kr-tjT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -25,21 +25,19 @@
             <objects>
                 <viewController id="txB-4R-kxc" customClass="KLRootViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="97g-0u-hmc">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="home_background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xfy-Ma-1I1">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="773" id="Fnv-Lo-nwX"/>
-                                </constraints>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="home_background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="xfy-Ma-1I1"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xfy-Ma-1I1" firstAttribute="leading" secondItem="97g-0u-hmc" secondAttribute="leading" type="default" id="OXr-pl-kTH"/>
                             <constraint firstItem="xfy-Ma-1I1" firstAttribute="bottom" secondItem="97g-0u-hmc" secondAttribute="bottom" type="default" id="Vi1-Te-TCO"/>
+                            <constraint firstItem="xfy-Ma-1I1" firstAttribute="trailing" secondItem="97g-0u-hmc" secondAttribute="trailing" type="default" id="d1G-FK-mFM"/>
                             <constraint firstItem="xfy-Ma-1I1" firstAttribute="top" secondItem="97g-0u-hmc" secondAttribute="top" type="default" id="m0q-8s-eHA"/>
                         </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="WEs-Jf-6Ep">
                         <barButtonItem key="rightBarButtonItem" title="Show/Hide" id="JMp-aE-cCA">
@@ -49,6 +47,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tKo-5O-xqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

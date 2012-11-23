@@ -34,7 +34,7 @@
 @property (nonatomic, strong) KLGradientView* sectionStage;
 @property (nonatomic, strong) id<KLHorizontalSelectDelegate> delegate;
 @property (nonatomic, strong) id<KLHorizontalSelectDataSource> dataSource;
-
+@property (nonatomic, strong) NSIndexPath* selectedIndex; 
 -(void) hideSelected:(BOOL) animated;
 -(void) showSelected:(BOOL) animated;
 -(void) toggleSelected:(BOOL) animated;
