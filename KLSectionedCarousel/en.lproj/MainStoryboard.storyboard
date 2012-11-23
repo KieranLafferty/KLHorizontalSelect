@@ -24,7 +24,7 @@
             <objects>
                 <viewController id="ACG-MN-yMd" customClass="KLRootViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="crY-F2-4gH">
-                        <rect key="frame" x="0.0" y="64" width="568" height="256"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="home_background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TPi-4e-mjR">
@@ -39,7 +39,6 @@
                             <constraint firstItem="TPi-4e-mjR" firstAttribute="top" secondItem="crY-F2-4gH" secondAttribute="top" type="default" id="U4k-HE-bZJ"/>
                             <constraint firstItem="TPi-4e-mjR" firstAttribute="bottom" secondItem="crY-F2-4gH" secondAttribute="bottom" type="default" id="XFk-IQ-Zcw"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="Dnh-I9-4IT">
                         <barButtonItem key="rightBarButtonItem" title="Show/Hide" id="8iz-Ub-C1S">
@@ -48,7 +47,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9r-lD-13y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
