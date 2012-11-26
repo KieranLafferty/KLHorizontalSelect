@@ -61,6 +61,8 @@
         self.selectedIndicator = [[UIView alloc] initWithFrame: CGRectMake(0, 0, [KLHorizontalSelect hypotenuse], [KLHorizontalSelect hypotenuse])];
         [self.selectedIndicator setBackgroundColor: kHeaderGradientBottomColor];
         [self.selectedIndicator setTransform: CGAffineTransformMakeRotation(3*M_PI_4)];
+        [self.selectedIndicator.layer setShouldRasterize:YES];
+        
         [self.selectedIndicator.layer setTransform: CATransform3DRotate(self.selectedIndicator.layer.transform, (1/4.0)*M_PI, 1.0, 1.0, 0.0)];
   
 
