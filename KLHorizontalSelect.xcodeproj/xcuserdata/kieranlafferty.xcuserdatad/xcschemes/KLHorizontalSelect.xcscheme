@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77CF0933164D75EB0078DE0C"
+               BlueprintIdentifier = "774226331673F09900262591"
                BuildableName = "KLHorizontalSelect.app"
                BlueprintName = "KLHorizontalSelect"
                ReferencedContainer = "container:KLHorizontalSelect.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77CF095D164D75EC0078DE0C"
+               BlueprintIdentifier = "7742265D1673F09A00262591"
                BuildableName = "KLHorizontalSelectTests.octest"
                BlueprintName = "KLHorizontalSelectTests"
                ReferencedContainer = "container:KLHorizontalSelect.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "77CF0933164D75EB0078DE0C"
+            BlueprintIdentifier = "774226331673F09900262591"
             BuildableName = "KLHorizontalSelect.app"
             BlueprintName = "KLHorizontalSelect"
             ReferencedContainer = "container:KLHorizontalSelect.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "77CF0933164D75EB0078DE0C"
+            BlueprintIdentifier = "774226331673F09900262591"
             BuildableName = "KLHorizontalSelect.app"
             BlueprintName = "KLHorizontalSelect"
             ReferencedContainer = "container:KLHorizontalSelect.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "77CF0933164D75EB0078DE0C"
+            BlueprintIdentifier = "774226331673F09900262591"
             BuildableName = "KLHorizontalSelect.app"
             BlueprintName = "KLHorizontalSelect"
             ReferencedContainer = "container:KLHorizontalSelect.xcodeproj">

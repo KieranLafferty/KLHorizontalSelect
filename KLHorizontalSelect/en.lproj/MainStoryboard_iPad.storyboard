@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Df7-gP-B3D">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="3MB-8I-fBZ">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Df7-gP-B3D" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H8B-bi-BOe">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="n2c-Ui-Mq8" kind="relationship" relationship="rootViewController" id="joZ-eK-BlI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zb5-Xn-Ubm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-290" y="32"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cZe-EQ-rOF">
+            <objects>
+                <viewController id="n2c-Ui-Mq8" customClass="KLViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H7H-De-jTG">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="home_background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lsO-ld-aQF"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lsO-ld-aQF" firstAttribute="trailing" secondItem="H7H-De-jTG" secondAttribute="trailing" type="default" id="OxG-vn-RfA"/>
+                            <constraint firstItem="lsO-ld-aQF" firstAttribute="leading" secondItem="H7H-De-jTG" secondAttribute="leading" type="default" id="ueA-4F-9Py"/>
+                            <constraint firstItem="lsO-ld-aQF" firstAttribute="top" secondItem="H7H-De-jTG" secondAttribute="top" type="default" id="vkQ-QS-uiy"/>
+                            <constraint firstItem="lsO-ld-aQF" firstAttribute="bottom" secondItem="H7H-De-jTG" secondAttribute="bottom" type="default" id="zzb-wT-mda"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Oiw-0M-d15">
+                        <barButtonItem key="rightBarButtonItem" title="Show/Hide" id="CKh-8V-SMC">
+                            <connections>
+                                <action selector="showHidePressed:" destination="n2c-Ui-Mq8" id="dxO-bv-5Fg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwV-Qq-Vod" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="531" y="32"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home_background.jpg" width="320" height="568"/>
+    </resources>
+    <classes>
+        <class className="KLViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KLViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showHidePressed:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

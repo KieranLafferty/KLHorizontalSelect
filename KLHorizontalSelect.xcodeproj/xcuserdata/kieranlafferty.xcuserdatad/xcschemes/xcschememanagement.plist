@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>KLSectionedCarousel.xcscheme</key>
+		<key>KLHorizontalSelect.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>77CF0933164D75EB0078DE0C</key>
+		<key>774226331673F09900262591</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77CF095D164D75EC0078DE0C</key>
+		<key>7742265D1673F09A00262591</key>
 		<dict>
 			<key>primary</key>
 			<true/>
