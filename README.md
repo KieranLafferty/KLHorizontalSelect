@@ -17,7 +17,7 @@ Drag the included <code>KLHorizontalSelect.h, KLHorizontalSelect.m</code> files 
 
 ## Usage ##
 
-Import the required file and declare your controller to conform to the HorizontalSelect delegate to recieve callbacks
+Import the required file and declare your controller to conform to the KLHorizontalSelect delegate to recieve callbacks
 
 	#import "KLHorizontalSelect.h"
 	@interface KLViewController : UIViewController <KLHorizontalSelectDelegate>
