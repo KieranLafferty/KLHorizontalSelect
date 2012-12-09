@@ -17,14 +17,14 @@ Drag the included <code>KLHorizontalSelect.h, KLHorizontalSelect.m</code> files 
 
 ## Usage ##
 
-Import the required file and declare your controller to conform to the HorizontalSelect datasource and delegate
+Import the required file and declare your controller to conform to the HorizontalSelect delegate to recieve callbacks
 
 	#import "KLHorizontalSelect.h"
 	@interface KLViewController : UIViewController <KLHorizontalSelectDelegate>
 	@property (nonatomic, strong) KLHorizontalSelect* horizontalSelect;
 	@end
 
-Implement the required methods of the data source 
+Initialize the control and set the table data with an array of dictionaries (See provided Plist for sample protocol)
 
 	- (void)viewDidLoad
 	{
