@@ -1,7 +1,7 @@
 KLHorizontalSelect
 =======
 
-<img src="https://raw.github.com/KieranLafferty/KLHorizontalSelect/master/Images/iPhoneScreenshot.png" width="50%"/>
+<img src="https://raw.github.com/KieranLafferty/KLHorizontalSelect/master/iPhone_Screenshot.png" width="50%"/>
 
 Scroll left and right on the section scroller to make a selection. Inspiration for this project came from 8tracks iPhone application
 
@@ -20,42 +20,47 @@ Drag the included <code>KLHorizontalSelect.h, KLHorizontalSelect.m</code> files 
 Import the required file and declare your controller to conform to the HorizontalSelect datasource and delegate
 
 	#import "KLHorizontalSelect.h"
-
-	@interface KLRootViewController : UIViewController <KLHorizontalSelectDataSource, KLHorizontalSelectDelegate>
-
+	@interface KLViewController : UIViewController <KLHorizontalSelectDelegate>
+	@property (nonatomic, strong) KLHorizontalSelect* horizontalSelect;
+	@end
 
 Implement the required methods of the data source 
 
-	-(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-	    return [self.sectionData count];
-	}
-	- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-	    [collectionView registerClass:[KLHeaderViewCell class] forCellWithReuseIdentifier:@"Cell"];
-	    KLHeaderViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-	    NSDictionary* cellDictionary = [self.sectionData objectAtIndex:indexPath.row];
-	    [cell.image setImage:[UIImage imageNamed: [cellDictionary objectForKey:@"image"]]];
-	    [cell.label setText:[cellDictionary objectForKey:@"text"]];
-	    return cell;
+	- (void)viewDidLoad
+	{
+	    [super viewDidLoad];
+	    // Do any additional setup after loading the view.
+	    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:10/255.0 green:37/255.0 blue:70/255.0 alpha:1]];
+    
+	    //Initialize the informtion to feed the control
+	    NSString* plistPath = [[NSBundle mainBundle] pathForResource: @"SectionData"
+	                                                          ofType: @"plist"];
+	    // Build the array from the plist
+	    NSArray* controlData = [[NSArray alloc] initWithContentsOfFile:plistPath];
+    
+		// Do any additional setup after loading the view, typically from a nib.
+	    self.horizontalSelect = [[KLHorizontalSelect alloc] initWithFrame: self.view.bounds];
+	    [self.horizontalSelect setTableData: controlData];
+	    [self.view addSubview: self.horizontalSelect];
+    
 	}
 
 Implement the optional delegate method to be notified when a new item is selected
 
-	-(void) didSelectItem:(UICollectionView*)collectionView item:(UICollectionViewCell*) cell {
-	    KLHeaderViewCell* selectedCell = (KLHeaderViewCell*) cell;
-    
-	    NSLog(@"Selected: %@", selectedCell.label.text);
+	- (void) horizontalSelect:(id)horizontalSelect didSelectCell:(KLHorizontalSelectCell *)cell {
+	    NSLog(@"Selected Cell: %@", cell.label.text);
 	}
 
 ## Config ##
 The visual appearance can be tweaked by changing the constants in <code>KLHorizontalSelect.m</code>:
 
-	#define kPickerHeight 120
-	#define kHeaderImageSize 60.0
-	#define kHeaderLabelHeight 20.0
-	#define kHeaderGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
-	#define kHeaderGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
-	#define kHeaderArrowWidth 40.0
-
+	#define kDefaultCellWidth 80.0
+	#define kDefaultCellHeight 90
+	#define kDefaultGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
+	#define kDefaultGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
+	#define kHeaderArrowWidth 25.0
+	#define kDefaultLabelHeight 20.0
+	#define kDefaultImageHeight 60.0
 
 ## Contact ##
 

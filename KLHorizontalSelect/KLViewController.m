@@ -32,28 +32,11 @@
     [self.view addSubview: self.horizontalSelect];
     
 }
--(void) viewWillAppear:(BOOL)animated {
-    //Register for device orientation changes to resize if necessary
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-	
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didRotate:)
-                                                 name:@"UIDeviceOrientationDidChangeNotification" object:nil];
-}
--(void) viewWillDisappear:(BOOL)animated {
-    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
-}
--(void) didRotate: (id) sender {
-    [self.horizontalSelect setFrame:self.view.bounds];
-}
+#pragma - mark KLHorizontalSelectDelegate implementation
 - (void) horizontalSelect:(id)horizontalSelect didSelectCell:(KLHorizontalSelectCell *)cell {
     NSLog(@"Selected Cell: %@", cell.label.text);
 }
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 - (IBAction)showHidePressed:(id)sender {
     [self.horizontalSelect.arrow toggle:YES];
 }
