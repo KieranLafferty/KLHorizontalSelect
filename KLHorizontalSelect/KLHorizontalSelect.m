@@ -176,11 +176,6 @@
 
 @end
 
-@implementation KLTableView
-
-
-
-@end
 @implementation KLHorizontalSelectCell
 
 -(id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -206,11 +201,7 @@
     }
     return self;
 }
-
 @end
-
-
-
 
 @implementation KLHorizontalSelectArrow
 - (float) hypotenuse {
@@ -253,6 +244,8 @@
 
     self.isShowing = YES;
 }
+
+//Allows setting of the anchor point for animations without moving the sublayers (i.e the drawn arrow) to the origin of the anchor
 -(void)setAnchorPoint:(CGPoint)anchorPoint forView:(UIView *)view
 {
     CGPoint newPoint = CGPointMake(view.bounds.size.width * anchorPoint.x, view.bounds.size.height * anchorPoint.y);
