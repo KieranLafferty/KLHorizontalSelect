@@ -137,7 +137,6 @@
 		774226291673F09900262591 = {
 			isa = PBXGroup;
 			children = (
-				774226A51673F67C00262591 /* QuartzCore.framework */,
 				774226771673F10700262591 /* SectionData.plist */,
 				7742263E1673F09900262591 /* KLHorizontalSelect */,
 				774226651673F09A00262591 /* KLHorizontalSelectTests */,
@@ -158,6 +157,7 @@
 		774226371673F09900262591 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				774226A51673F67C00262591 /* QuartzCore.framework */,
 				774226381673F09900262591 /* UIKit.framework */,
 				7742263A1673F09900262591 /* Foundation.framework */,
 				7742263C1673F09900262591 /* CoreGraphics.framework */,
