@@ -11,7 +11,7 @@
 #define kDefaultGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]   //Top Gradient Color
 #define kDefaultGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]    //Bottom Gradient Color
 #define kHeaderArrowWidth 40.0      //Adjusts the width of the selection arrow
-#define kHeaderArrowHeight 20.0     //Adjusts the width of the selection arrow
+#define kHeaderArrowHeight 15.0     //Adjusts the width of the selection arrow
 #define kDefaultLabelHeight 20.0    //Adjusts the height of the label
 #define kDefaultImageHeight 60.0    //Adjusts the height of the image
 
