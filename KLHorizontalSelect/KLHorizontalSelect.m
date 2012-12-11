@@ -6,19 +6,8 @@
 //  Copyright (c) 2012 Kieran Lafferty. All rights reserved.
 //
 
-#define kDefaultCellWidth 80.0      //The width of each of the items
-#define kDefaultCellHeight 90       //Hite of the items/control
-#define kDefaultGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]   //Top Gradient Color
-#define kDefaultGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]    //Bottom Gradient Color
-#define kHeaderArrowWidth 40.0      //Adjusts the width of the selection arrow
-#define kHeaderArrowHeight 15.0     //Adjusts the width of the selection arrow
-#define kDefaultLabelHeight 20.0    //Adjusts the height of the label
-#define kDefaultImageHeight 60.0    //Adjusts the height of the image
 
-//Shadow properties
-#define kDefaultShadowColor [UIColor blackColor]
-#define kDefaultShadowOffset CGSizeMake(0.0, 3.0)
-#define kDefaultShadowOpacity 0.96
+
 #import "KLHorizontalSelect.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -287,7 +276,6 @@
             [self.layer setTransform: CATransform3DRotate(self.layer.transform, -(1/4.0)*M_PI, 1.0, 0.0, 0.0)];
         }
     }
-
     self.isShowing = NO;
 }
 -(void) toggle:(BOOL) animated {

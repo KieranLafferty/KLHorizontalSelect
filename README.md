@@ -54,14 +54,22 @@ Implement the optional delegate method to be notified when a new item is selecte
 ## Config ##
 The visual appearance can be tweaked by changing the constants in <code>KLHorizontalSelect.m</code>:
 
+	//Control Properties
 	#define kDefaultCellWidth 80.0      //The width of each of the items
-	#define kDefaultCellHeight 90       //Height of the items/control
+	#define kDefaultCellHeight 90       //Hite of the items/control
 	#define kDefaultGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]   //Top Gradient Color
 	#define kDefaultGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]    //Bottom Gradient Color
-	#define kHeaderArrowWidth 40.0      //Adjusts the width of the selection arrow
-	#define kHeaderArrowHeight 20.0     //Adjusts the width of the selection arrow
 	#define kDefaultLabelHeight 20.0    //Adjusts the height of the label
 	#define kDefaultImageHeight 60.0    //Adjusts the height of the image
+
+	//Arrow properties
+	#define kHeaderArrowWidth 40.0      //Adjusts the width of the selection arrow
+	#define kHeaderArrowHeight 15.0     //Adjusts the width of the selection arrow
+
+	//Shadow properties
+	#define kDefaultShadowColor [UIColor blackColor]
+	#define kDefaultShadowOffset CGSizeMake(0.0, 3.0)
+	#define kDefaultShadowOpacity 0.96
 
 ## Contact ##
 
