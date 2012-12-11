@@ -15,7 +15,10 @@
 #define kDefaultLabelHeight 20.0    //Adjusts the height of the label
 #define kDefaultImageHeight 60.0    //Adjusts the height of the image
 
-
+//Shadow properties
+#define kDefaultShadowColor [UIColor blackColor]
+#define kDefaultShadowOffset CGSizeMake(0.0, 3.0)
+#define kDefaultShadowOpacity 0.96
 #import "KLHorizontalSelect.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -59,6 +62,9 @@
         [self addSubview: self.tableView];
 
 
+        [self.layer setShadowColor: [kDefaultShadowColor CGColor]];
+        [self.layer setShadowOffset: kDefaultShadowOffset];
+        [self.layer setShadowOpacity: kDefaultShadowOpacity];
         
         self.backgroundColor = [UIColor whiteColor];
 
@@ -222,7 +228,11 @@
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
         [shapeLayer setPath:path];
         [shapeLayer setFillColor:[kDefaultGradientBottomColor CGColor]];
+        
+        
+        
         [self.layer addSublayer:shapeLayer];
+
         CGPathRelease(path);
         
         [self setAnchorPoint:CGPointMake(0.5, 0.0) forView:self];
