@@ -32,6 +32,8 @@
     [self.view addSubview: self.horizontalSelect];
     
 }
+
+
 #pragma - mark KLHorizontalSelectDelegate implementation
 - (void) horizontalSelect:(id)horizontalSelect didSelectCell:(KLHorizontalSelectCell *)cell {
     NSLog(@"Selected Cell: %@", cell.label.text);
