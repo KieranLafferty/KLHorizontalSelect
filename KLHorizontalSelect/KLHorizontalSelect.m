@@ -10,7 +10,7 @@
 #define kDefaultCellHeight 90
 #define kDefaultGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
 #define kDefaultGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
-#define kHeaderArrowWidth 25.0
+#define kHeaderArrowWidth 30.0
 #define kDefaultLabelHeight 20.0
 #define kDefaultImageHeight 60.0
 
@@ -19,15 +19,11 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface KLHorizontalSelect ()
--(BOOL) isSpacingCell:(NSIndexPath*) indexPath;
 -(CGFloat) defaultMargin;
 @end
 @implementation KLHorizontalSelect
 -(CGFloat) defaultMargin {
     return self.frame.size.width/2.0 - kDefaultCellWidth/2.0;
-}
--(BOOL) isSpacingCell:(NSIndexPath*) indexPath {
-    return   indexPath.row == 0 || indexPath.row == self.tableData.count + 1;
 }
 
 -(id) initWithFrame:(CGRect)frame delegate:(id<KLHorizontalSelectDelegate>) delegate {
@@ -40,6 +36,12 @@
     
     self = [super initWithFrame:frame];
     if (self) {
+        //Configure the arrow
+        self.arrow = [[KLHorizontalSelectArrow alloc] initWithFrame:CGRectMake(0, 0, kHeaderArrowWidth, kHeaderArrowWidth)color:kDefaultGradientBottomColor];
+        [self.arrow setCenter:CGPointMake(self.frame.size.width/2.0, self.frame.size.height)];
+        [self addSubview:self.arrow];
+        
+        
         // Make the UITableView's height the width, and width the height so that when we rotate it it will fit exactly
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.height, self.frame.size.width)];
         [self.tableView setDelegate:self];
@@ -49,13 +51,13 @@
         [self.tableView setCenter: self.center];
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         [self.tableView setBackgroundColor:[UIColor clearColor]];
+        
+        [self.tableView setContentInset: UIEdgeInsetsMake(self.defaultMargin, 0, self.defaultMargin, 0)];
         [self.tableView setShowsVerticalScrollIndicator:NO];
+        
         [self addSubview: self.tableView];
 
-        //Configure the arrow
-        self.arrow = [[KLHorizontalSelectArrow alloc] initWithFrame:CGRectMake(0, 0, kHeaderArrowWidth, kHeaderArrowWidth)color:kDefaultGradientBottomColor];
-        [self.arrow setCenter:CGPointMake(self.frame.size.width/2.0, self.frame.size.height)];
-        [self addSubview: self.arrow];
+
         
         self.backgroundColor = [UIColor whiteColor];
 
@@ -119,9 +121,10 @@
     NSIndexPath* centerIndexPath = [self.tableView indexPathForRowAtPoint:point];
     
     [self.tableView selectRowAtIndexPath: centerIndexPath
-                                animated:YES
-                          scrollPosition:UITableViewScrollPositionMiddle];
-    if (centerIndexPath.row != self.currentIndex.row && ![self isSpacingCell:centerIndexPath]) {
+                                animated: YES
+                          scrollPosition: UITableViewScrollPositionMiddle];
+    
+    if (centerIndexPath.row != self.currentIndex.row) {
         //Hide the arrow when scrolling
         [self setCurrentIndex:centerIndexPath];
     }
@@ -132,16 +135,17 @@
     self->_currentIndex = currentIndex;
     [self.arrow hide:YES];
     [self.tableView scrollToRowAtIndexPath:currentIndex
-                          atScrollPosition:UITableViewScrollPositionMiddle
+                          atScrollPosition:UITableViewScrollPositionNone
                                   animated:YES];
-    
+    NSLog(@"Row : %d", currentIndex.row);
+
     if ([self.delegate respondsToSelector:@selector(horizontalSelect:didSelectCell:)]) {
         [self.delegate horizontalSelect:self didSelectCell:(KLHorizontalSelectCell*)[self.tableView cellForRowAtIndexPath:currentIndex]];
     }
 }
 #pragma mark - UITableViewDelegate implementation
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row != self.currentIndex.row && ![self isSpacingCell:indexPath]) {
+    if (indexPath.row != self.currentIndex.row ) {
         //Hide the arrow when scrolling
         [self setCurrentIndex:indexPath];
     }
@@ -151,40 +155,23 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     //Add an blank cell with spacing for 
-    return [self.tableData count] + 2;
+    return [self.tableData count];
 }
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath  {
-    
-    //Add a blank cell with spacing to center out the actual cells 
-    if ([self isSpacingCell:indexPath]) {
-        static NSString* reuseIdentifier = @"SpacingCell";
-        [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseIdentifier];
-        UITableViewCell* cell = (KLHorizontalSelectCell*)[self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-        [cell setSelectionStyle:UITableViewCellEditingStyleNone];
-        return cell;
-    }
-    else {
         static NSString* reuseIdentifier = @"HorizontalCell";
         [self.tableView registerClass:[KLHorizontalSelectCell class] forCellReuseIdentifier:reuseIdentifier];
         KLHorizontalSelectCell* cell = (KLHorizontalSelectCell*)[self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
         
-        NSDictionary* cellData = [self.tableData objectAtIndex: indexPath.row - 1];
+        NSDictionary* cellData = [self.tableData objectAtIndex: indexPath.row];
         [cell.image setImage:[UIImage imageNamed: [cellData objectForKey:@"image"]]];
         [cell.label setText: [cellData objectForKey:@"text"]];
         [cell setSelectionStyle:UITableViewCellEditingStyleNone];
 
         return cell;
-    }
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if ([self isSpacingCell:indexPath]) {
-        return [self defaultMargin];
-    }
-    else {
-        return kDefaultCellWidth;
-    }
+    return kDefaultCellWidth;
 }
 
 @end
@@ -228,8 +215,8 @@
     if (self = [super initWithFrame:frame]) {
         //Initialize 
         self.backgroundColor = color;
-        [self.layer setShouldRasterize:YES];
-        [self.layer setZPosition: -100];
+        [self.layer setShouldRasterize:YES];        
+        [self.layer setZPosition: -[self hypotenuse]/2.0];
         
         //Rotate 45 degrees to get it looking like an arrow
         [self setTransform: CGAffineTransformMakeRotation(-M_PI_4)];
@@ -241,11 +228,11 @@
     if (!self.isShowing) {
         if (animated) {
             [UIView animateWithDuration:0.3 animations:^{
-                [self.layer setTransform: CATransform3DRotate(self.layer.transform, (1/4.0)*M_PI, 1, 1, 0)];
+                [self.layer setTransform: CATransform3DRotate(self.layer.transform, (1/4.0)*M_PI, 1.0, 1.0, 0.0)];
             }];
         }
         {
-            [self.layer setTransform: CATransform3DRotate(self.layer.transform,(1/4.0)*M_PI, 1, 1, 0)];
+            [self.layer setTransform: CATransform3DRotate(self.layer.transform,(1/4.0)*M_PI, 1.0, 1.0, 0.0)];
         }
     }
 
