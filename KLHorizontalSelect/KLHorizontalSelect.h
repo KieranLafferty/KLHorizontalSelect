@@ -20,7 +20,8 @@
 -(void) toggle:(BOOL) animated;
 -(id) initWithFrame:(CGRect)frame color:(UIColor*) color;
 @end
-
+@interface KLTableView : UITableView
+@end
 @protocol KLHorizontalSelectDelegate <NSObject>
 @optional
 -(void) horizontalSelect:(id)horizontalSelect didSelectCell:(KLHorizontalSelectCell*) cell;

@@ -6,13 +6,14 @@
 //  Copyright (c) 2012 Kieran Lafferty. All rights reserved.
 //
 
-#define kDefaultCellWidth 80.0
-#define kDefaultCellHeight 90
-#define kDefaultGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]
-#define kDefaultGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]
-#define kHeaderArrowWidth 30.0
-#define kDefaultLabelHeight 20.0
-#define kDefaultImageHeight 60.0
+#define kDefaultCellWidth 80.0      //The width of each of the items
+#define kDefaultCellHeight 90       //Hite of the items/control
+#define kDefaultGradientTopColor  [UIColor colorWithRed: 242/255.0 green: 243/255.0 blue: 246/255.0 alpha: 1]   //Top Gradient Color
+#define kDefaultGradientBottomColor  [UIColor colorWithRed: 197/255.0 green: 201/255.0 blue: 204/255.0 alpha: 1]    //Bottom Gradient Color
+#define kHeaderArrowWidth 40.0      //Adjusts the width of the selection arrow
+#define kHeaderArrowHeight 20.0     //Adjusts the width of the selection arrow
+#define kDefaultLabelHeight 20.0    //Adjusts the height of the label
+#define kDefaultImageHeight 60.0    //Adjusts the height of the image
 
 
 #import "KLHorizontalSelect.h"
@@ -37,8 +38,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         //Configure the arrow
-        self.arrow = [[KLHorizontalSelectArrow alloc] initWithFrame:CGRectMake(0, 0, kHeaderArrowWidth, kHeaderArrowWidth)color:kDefaultGradientBottomColor];
-        [self.arrow setCenter:CGPointMake(self.frame.size.width/2.0, self.frame.size.height)];
+        self.arrow = [[KLHorizontalSelectArrow alloc] initWithFrame:CGRectMake(0, kDefaultCellHeight, kHeaderArrowWidth, kHeaderArrowHeight)color:kDefaultGradientBottomColor];
+        [self.arrow setCenter:CGPointMake(self.frame.size.width/2.0, self.arrow.center.y)];
         [self addSubview:self.arrow];
         
         
@@ -150,7 +151,6 @@
         [self setCurrentIndex:indexPath];
     }
 }
-
 #pragma mark - UITableViewDataSource implementation
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -176,6 +176,11 @@
 
 @end
 
+@implementation KLTableView
+
+
+
+@end
 @implementation KLHorizontalSelectCell
 
 -(id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -213,14 +218,24 @@
 }
 -(id) initWithFrame:(CGRect)frame color:(UIColor*) color {
     if (self = [super initWithFrame:frame]) {
-        //Initialize 
-        self.backgroundColor = color;
-        [self.layer setShouldRasterize:YES];        
-        [self.layer setZPosition: -[self hypotenuse]/2.0];
-        
-        //Rotate 45 degrees to get it looking like an arrow
-        [self setTransform: CGAffineTransformMakeRotation(-M_PI_4)];
         self.isShowing = YES;
+        
+        [self setBackgroundColor:[UIColor clearColor]];
+        
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path,NULL,0.0,0.0);
+        CGPathAddLineToPoint(path, NULL, 0.0f, 0.0f);
+        CGPathAddLineToPoint(path, NULL, frame.size.width, 0.0f);
+        CGPathAddLineToPoint(path, NULL, frame.size.width/2.0, frame.size.height);
+
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+        [shapeLayer setPath:path];
+        [shapeLayer setFillColor:[kDefaultGradientBottomColor CGColor]];
+        [self.layer addSublayer:shapeLayer];
+        CGPathRelease(path);
+        
+        [self setAnchorPoint:CGPointMake(0.5, 0.0) forView:self];
+
     }
     return self;
 }
@@ -228,26 +243,45 @@
     if (!self.isShowing) {
         if (animated) {
             [UIView animateWithDuration:0.3 animations:^{
-                [self.layer setTransform: CATransform3DRotate(self.layer.transform, (1/4.0)*M_PI, 1.0, 1.0, 0.0)];
+                [self.layer setTransform: CATransform3DRotate(self.layer.transform, (1/4.0)*M_PI, 1.0, 0.0, 0.0)];
             }];
         }
         {
-            [self.layer setTransform: CATransform3DRotate(self.layer.transform,(1/4.0)*M_PI, 1.0, 1.0, 0.0)];
+            [self.layer setTransform: CATransform3DRotate(self.layer.transform,(1/4.0)*M_PI, 1.0, 0.0, 0.0)];
         }
     }
 
     self.isShowing = YES;
 }
+-(void)setAnchorPoint:(CGPoint)anchorPoint forView:(UIView *)view
+{
+    CGPoint newPoint = CGPointMake(view.bounds.size.width * anchorPoint.x, view.bounds.size.height * anchorPoint.y);
+    CGPoint oldPoint = CGPointMake(view.bounds.size.width * view.layer.anchorPoint.x, view.bounds.size.height * view.layer.anchorPoint.y);
+    
+    newPoint = CGPointApplyAffineTransform(newPoint, view.transform);
+    oldPoint = CGPointApplyAffineTransform(oldPoint, view.transform);
+    
+    CGPoint position = view.layer.position;
+    
+    position.x -= oldPoint.x;
+    position.x += newPoint.x;
+    
+    position.y -= oldPoint.y;
+    position.y += newPoint.y;
+    
+    view.layer.position = position;
+    view.layer.anchorPoint = anchorPoint;
+}
 -(void) hide:(BOOL) animated {
     if (self.isShowing) {
         if (animated) {
             [UIView animateWithDuration:0.3 animations:^{
-                [self.layer setTransform: CATransform3DRotate(self.layer.transform, -(1/4.0)*M_PI, 1, 1, 0)];
+                [self.layer setTransform: CATransform3DRotate(self.layer.transform, -(1/4.0)*M_PI,1.0, 0.0, 0.0)];
                 
             }];
         }
         {
-            [self.layer setTransform: CATransform3DRotate(self.layer.transform, -(1/4.0)*M_PI, 1, 1, 0)];
+            [self.layer setTransform: CATransform3DRotate(self.layer.transform, -(1/4.0)*M_PI, 1.0, 0.0, 0.0)];
         }
     }
 
