@@ -118,7 +118,7 @@
     
     [self.tableView selectRowAtIndexPath: centerIndexPath
                                 animated: YES
-                          scrollPosition: UITableViewScrollPositionMiddle];
+                          scrollPosition: UITableViewScrollPositionTop];
     
     if (centerIndexPath.row != self.currentIndex.row) {
         //Hide the arrow when scrolling
