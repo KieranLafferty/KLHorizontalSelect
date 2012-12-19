@@ -133,8 +133,6 @@
     [self.tableView scrollToRowAtIndexPath:currentIndex
                           atScrollPosition:UITableViewScrollPositionNone
                                   animated:YES];
-    NSLog(@"Row : %d", currentIndex.row);
-
     if ([self.delegate respondsToSelector:@selector(horizontalSelect:didSelectCell:)]) {
         [self.delegate horizontalSelect:self didSelectCell:(KLHorizontalSelectCell*)[self.tableView cellForRowAtIndexPath:currentIndex]];
     }

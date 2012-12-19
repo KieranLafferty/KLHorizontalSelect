@@ -31,7 +31,7 @@
     [self.horizontalSelect setTableData: controlData];
     
     //Customize the initially selected index - Note section is redundant but should always be 0
-    [self.horizontalSelect setCurrentIndex:[NSIndexPath indexPathForRow:2 inSection:0]];
+    [self.horizontalSelect setCurrentIndex:[NSIndexPath indexPathForRow:4 inSection:0]];
     
     //Add the view as a subview
     [self.view addSubview: self.horizontalSelect];
