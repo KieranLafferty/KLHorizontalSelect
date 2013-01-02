@@ -47,6 +47,7 @@
         
         [self.tableView setContentInset: UIEdgeInsetsMake(self.defaultMargin, 0, self.defaultMargin, 0)];
         [self.tableView setShowsVerticalScrollIndicator:NO];
+        [self.tableView setDecelerationRate: UIScrollViewDecelerationRateFast];
         
         [self addSubview: self.tableView];
 
