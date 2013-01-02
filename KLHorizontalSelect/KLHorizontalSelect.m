@@ -84,13 +84,15 @@
     
     myGradient = CGGradientCreateWithColorComponents (myColorspace, components,
                                                       locations, num_locations);
+    CGColorSpaceRelease(myColorspace);
     CGPoint myStartPoint, myEndPoint;
     myStartPoint.x = self.frame.size.width/2;
     myStartPoint.y = 0.0;
     myEndPoint.x = self.frame.size.width/2;
     myEndPoint.y = self.frame.size.height;
     CGContextDrawLinearGradient (context, myGradient, myStartPoint, myEndPoint, 0);
-    
+    CGGradientRelease(myGradient);
+
 }
 #pragma mark - UIScrollViewDelegate implementation
 
