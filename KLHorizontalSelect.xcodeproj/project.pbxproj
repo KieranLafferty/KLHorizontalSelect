@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7708DD2B169E9AE0001DB811 /* KLHorizontalSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708DD2A169E9AE0001DB811 /* KLHorizontalSelect.m */; };
 		774226391673F09900262591 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 774226381673F09900262591 /* UIKit.framework */; };
 		7742263B1673F09900262591 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7742263A1673F09900262591 /* Foundation.framework */; };
 		7742263D1673F09900262591 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7742263C1673F09900262591 /* CoreGraphics.framework */; };
@@ -45,7 +46,6 @@
 		7742269E1673F11400262591 /* home_icon_tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7742268A1673F11400262591 /* home_icon_tag@2x.png */; };
 		7742269F1673F11400262591 /* home_icon_trending.png in Resources */ = {isa = PBXBuildFile; fileRef = 7742268B1673F11400262591 /* home_icon_trending.png */; };
 		774226A01673F11400262591 /* home_icon_trending@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7742268C1673F11400262591 /* home_icon_trending@2x.png */; };
-		774226A41673F14900262591 /* KLHorizontalSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 774226A31673F14900262591 /* KLHorizontalSelect.m */; };
 		774226A61673F67C00262591 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 774226A51673F67C00262591 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7708DD29169E9AE0001DB811 /* KLHorizontalSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLHorizontalSelect.h; sourceTree = "<group>"; };
+		7708DD2A169E9AE0001DB811 /* KLHorizontalSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLHorizontalSelect.m; sourceTree = "<group>"; };
 		774226341673F09900262591 /* KLHorizontalSelect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KLHorizontalSelect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		774226381673F09900262591 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7742263A1673F09900262591 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -104,8 +106,6 @@
 		7742268A1673F11400262591 /* home_icon_tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_icon_tag@2x.png"; sourceTree = "<group>"; };
 		7742268B1673F11400262591 /* home_icon_trending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon_trending.png; sourceTree = "<group>"; };
 		7742268C1673F11400262591 /* home_icon_trending@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_icon_trending@2x.png"; sourceTree = "<group>"; };
-		774226A21673F14900262591 /* KLHorizontalSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLHorizontalSelect.h; sourceTree = "<group>"; };
-		774226A31673F14900262591 /* KLHorizontalSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLHorizontalSelect.m; sourceTree = "<group>"; };
 		774226A51673F67C00262591 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -134,6 +134,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7708DD28169E9AE0001DB811 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7708DD29169E9AE0001DB811 /* KLHorizontalSelect.h */,
+				7708DD2A169E9AE0001DB811 /* KLHorizontalSelect.m */,
+			);
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
+		};
 		774226291673F09900262591 = {
 			isa = PBXGroup;
 			children = (
@@ -169,8 +178,8 @@
 		7742263E1673F09900262591 /* KLHorizontalSelect */ = {
 			isa = PBXGroup;
 			children = (
+				7708DD28169E9AE0001DB811 /* Classes */,
 				774226A11673F11900262591 /* Images */,
-				774226761673F0AC00262591 /* KLHorizontalSelect */,
 				774226471673F09900262591 /* KLAppDelegate.h */,
 				774226481673F09900262591 /* KLAppDelegate.m */,
 				774226501673F09A00262591 /* MainStoryboard_iPhone.storyboard */,
@@ -213,15 +222,6 @@
 				774226681673F09A00262591 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		774226761673F0AC00262591 /* KLHorizontalSelect */ = {
-			isa = PBXGroup;
-			children = (
-				774226A21673F14900262591 /* KLHorizontalSelect.h */,
-				774226A31673F14900262591 /* KLHorizontalSelect.m */,
-			);
-			name = KLHorizontalSelect;
 			sourceTree = "<group>";
 		};
 		774226A11673F11900262591 /* Images */ = {
@@ -387,7 +387,7 @@
 				774226451673F09900262591 /* main.m in Sources */,
 				774226491673F09A00262591 /* KLAppDelegate.m in Sources */,
 				774226581673F09A00262591 /* KLViewController.m in Sources */,
-				774226A41673F14900262591 /* KLHorizontalSelect.m in Sources */,
+				7708DD2B169E9AE0001DB811 /* KLHorizontalSelect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
