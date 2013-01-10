@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cxh-mC-mvu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="cxh-mC-mvu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -27,14 +27,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="home_background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DRI-t3-fH6"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="home_background.jpg" id="DRI-t3-fH6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="DRI-t3-fH6" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="OSn-1a-32W"/>
-                            <constraint firstItem="DRI-t3-fH6" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="Oka-LU-eFs"/>
-                            <constraint firstItem="DRI-t3-fH6" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="hCH-Ul-qzG"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="848-be-3rM">
                         <barButtonItem key="rightBarButtonItem" title="Show/Hide" id="DmM-WU-cwe">
@@ -57,9 +54,6 @@
             <relationships>
                 <relationship kind="action" name="showHidePressed:"/>
             </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

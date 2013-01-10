@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Df7-gP-B3D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Df7-gP-B3D">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -28,15 +28,11 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="home_background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lsO-ld-aQF"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="home_background.jpg" id="lsO-ld-aQF">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="lsO-ld-aQF" firstAttribute="trailing" secondItem="H7H-De-jTG" secondAttribute="trailing" type="default" id="OxG-vn-RfA"/>
-                            <constraint firstItem="lsO-ld-aQF" firstAttribute="leading" secondItem="H7H-De-jTG" secondAttribute="leading" type="default" id="ueA-4F-9Py"/>
-                            <constraint firstItem="lsO-ld-aQF" firstAttribute="top" secondItem="H7H-De-jTG" secondAttribute="top" type="default" id="vkQ-QS-uiy"/>
-                            <constraint firstItem="lsO-ld-aQF" firstAttribute="bottom" secondItem="H7H-De-jTG" secondAttribute="bottom" type="default" id="zzb-wT-mda"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Oiw-0M-d15">
                         <barButtonItem key="rightBarButtonItem" title="Show/Hide" id="CKh-8V-SMC">
@@ -61,9 +57,6 @@
             <relationships>
                 <relationship kind="action" name="showHidePressed:"/>
             </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
