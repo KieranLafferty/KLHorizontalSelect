@@ -48,14 +48,6 @@
     <resources>
         <image name="home_background.jpg" width="320" height="568"/>
     </resources>
-    <classes>
-        <class className="KLViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KLViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showHidePressed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

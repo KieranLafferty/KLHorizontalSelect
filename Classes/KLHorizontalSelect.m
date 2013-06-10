@@ -31,9 +31,8 @@
     if (self) {
         //Configure the arrow
         self.arrow = [[KLHorizontalSelectArrow alloc] initWithFrame:CGRectMake(0, kDefaultCellHeight, kHeaderArrowWidth, kHeaderArrowHeight)color:kDefaultGradientBottomColor];
-        [self.arrow setCenter:CGPointMake(self.frame.size.width/2.0, self.arrow.center.y)];
+        [self.arrow setCenter:CGPointMake(self.frame.size.width/2.0, kDefaultCellHeight)];
         [self addSubview:self.arrow];
-        
         
         // Make the UITableView's height the width, and width the height so that when we rotate it it will fit exactly
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.height, self.frame.size.width)];
@@ -45,10 +44,10 @@
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         [self.tableView setBackgroundColor:[UIColor clearColor]];
         
+        NSLog(@"Margin:%f", self.defaultMargin);
         [self.tableView setContentInset: UIEdgeInsetsMake(self.defaultMargin, 0, self.defaultMargin, 0)];
         [self.tableView setShowsVerticalScrollIndicator:NO];
         [self.tableView setDecelerationRate: UIScrollViewDecelerationRateFast];
-        
         [self addSubview: self.tableView];
 
 
@@ -177,7 +176,7 @@
 
 -(id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]){
-        UIView* containingView = [[UIView alloc] initWithFrame:CGRectMake(0, -5, kDefaultCellWidth, kDefaultCellHeight)];
+        UIView* containingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDefaultCellHeight, kDefaultCellWidth)];
         
         //Allocate and initialize the image view
         self.image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kDefaultImageHeight, kDefaultImageHeight)];
