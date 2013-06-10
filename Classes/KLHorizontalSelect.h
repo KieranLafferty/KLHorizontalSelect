@@ -47,7 +47,7 @@
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) NSArray* tableData;
 @property (nonatomic, strong) KLHorizontalSelectArrow* arrow;
-@property (nonatomic, strong) id<KLHorizontalSelectDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<KLHorizontalSelectDelegate> delegate;
 
 -(id) initWithFrame:(CGRect)frame delegate:(id<KLHorizontalSelectDelegate>) delegate;
 @end

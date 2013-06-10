@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "KLHorizontalSelect.h"
 @interface KLViewController : UIViewController <KLHorizontalSelectDelegate>
-@property (nonatomic, strong) KLHorizontalSelect* horizontalSelect;
+@property (nonatomic, strong) IBOutlet KLHorizontalSelect* horizontalSelect;
 - (IBAction)showHidePressed:(id)sender;
 @end

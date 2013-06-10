@@ -18,45 +18,54 @@
 -(CGFloat) defaultMargin {
     return self.frame.size.width/2.0 - kDefaultCellWidth/2.0;
 }
-
--(id) initWithFrame:(CGRect)frame delegate:(id<KLHorizontalSelectDelegate>) delegate {
-    self.delegate = delegate;
-    return  [self initWithFrame:frame];
+-(id) initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder: aDecoder]) {
+        [self initialize];
+    }
+    return self;
 }
+-(id) initWithFrame:(CGRect)frame delegate:(id<KLHorizontalSelectDelegate>) delegate {
+    if (self = [self initWithFrame: frame]) {
+        _delegate = delegate;
+    }
+    return  self;
+}
+-(void) initialize {
+    //Configure the arrow
+    self.arrow = [[KLHorizontalSelectArrow alloc] initWithFrame:CGRectMake(0, kDefaultCellHeight, kHeaderArrowWidth, kHeaderArrowHeight)color:kDefaultGradientBottomColor];
+    [self.arrow setCenter:CGPointMake(self.frame.size.width/2.0, kDefaultCellHeight)];
+    [self addSubview:self.arrow];
+    
+    // Make the UITableView's height the width, and width the height so that when we rotate it it will fit exactly
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.height, self.frame.size.width)];
+    [self.tableView setDelegate:self];
+    [self.tableView setDataSource:self];
+    // Rotate the tableview by 90 degrees so that it is side scrollable
+    [self.tableView setTransform:CGAffineTransformMakeRotation(-M_PI_2)];
+    [self.tableView setCenter: self.center];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
+    
 
+    [self.tableView setContentInset: UIEdgeInsetsMake(self.defaultMargin, 0, self.defaultMargin, 0)];
+    [self.tableView setShowsVerticalScrollIndicator:NO];
+    [self.tableView setDecelerationRate: UIScrollViewDecelerationRateFast];
+    [self addSubview: self.tableView];
+    
+    
+    [self.layer setShadowColor: [kDefaultShadowColor CGColor]];
+    [self.layer setShadowOffset: kDefaultShadowOffset];
+    [self.layer setShadowOpacity: kDefaultShadowOpacity];
+    
+    self.backgroundColor = [UIColor whiteColor];
+
+}
 - (id)initWithFrame:(CGRect)frame
 {
     
     self = [super initWithFrame:frame];
     if (self) {
-        //Configure the arrow
-        self.arrow = [[KLHorizontalSelectArrow alloc] initWithFrame:CGRectMake(0, kDefaultCellHeight, kHeaderArrowWidth, kHeaderArrowHeight)color:kDefaultGradientBottomColor];
-        [self.arrow setCenter:CGPointMake(self.frame.size.width/2.0, kDefaultCellHeight)];
-        [self addSubview:self.arrow];
-        
-        // Make the UITableView's height the width, and width the height so that when we rotate it it will fit exactly
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.height, self.frame.size.width)];
-        [self.tableView setDelegate:self];
-        [self.tableView setDataSource:self];
-        // Rotate the tableview by 90 degrees so that it is side scrollable
-        [self.tableView setTransform:CGAffineTransformMakeRotation(-M_PI_2)];
-        [self.tableView setCenter: self.center];
-        [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-        [self.tableView setBackgroundColor:[UIColor clearColor]];
-        
-        NSLog(@"Margin:%f", self.defaultMargin);
-        [self.tableView setContentInset: UIEdgeInsetsMake(self.defaultMargin, 0, self.defaultMargin, 0)];
-        [self.tableView setShowsVerticalScrollIndicator:NO];
-        [self.tableView setDecelerationRate: UIScrollViewDecelerationRateFast];
-        [self addSubview: self.tableView];
-
-
-        [self.layer setShadowColor: [kDefaultShadowColor CGColor]];
-        [self.layer setShadowOffset: kDefaultShadowOffset];
-        [self.layer setShadowOpacity: kDefaultShadowOpacity];
-        
-        self.backgroundColor = [UIColor whiteColor];
-
+        [self initialize];
     }
     return self;
 }

@@ -27,15 +27,10 @@
     NSArray* controlData = [[NSArray alloc] initWithContentsOfFile:plistPath];
     
 	// Do any additional setup after loading the view, typically from a nib.
-    self.horizontalSelect = [[KLHorizontalSelect alloc] initWithFrame: self.view.bounds];
     [self.horizontalSelect setTableData: controlData];
     [self.horizontalSelect setDelegate:self];
     //Customize the initially selected index - Note section is redundant but should always be 0
     [self.horizontalSelect setCurrentIndex:[NSIndexPath indexPathForRow:4 inSection:0]];
-    
-    //Add the view as a subview
-    [self.view addSubview: self.horizontalSelect];
-    
 }
 
 
