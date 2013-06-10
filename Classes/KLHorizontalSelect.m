@@ -154,16 +154,17 @@
     return [self.tableData count];
 }
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath  {
-        static NSString* reuseIdentifier = @"HorizontalCell";
-        [self.tableView registerClass:[KLHorizontalSelectCell class] forCellReuseIdentifier:reuseIdentifier];
-        KLHorizontalSelectCell* cell = (KLHorizontalSelectCell*)[self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-        
-        NSDictionary* cellData = [self.tableData objectAtIndex: indexPath.row];
-        [cell.image setImage:[UIImage imageNamed: [cellData objectForKey:@"image"]]];
-        [cell.label setText: [cellData objectForKey:@"text"]];
-        [cell setSelectionStyle:UITableViewCellEditingStyleNone];
+    static NSString* reuseIdentifier = @"HorizontalCell";
+    KLHorizontalSelectCell* cell = (KLHorizontalSelectCell*)[self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if(cell == nil) {
+        cell = [[KLHorizontalSelectCell alloc] init];
+    }
+    NSDictionary* cellData = [self.tableData objectAtIndex: indexPath.row];
+    [cell.image setImage:[UIImage imageNamed: [cellData objectForKey:@"image"]]];
+    [cell.label setText: [cellData objectForKey:@"text"]];
+    [cell setSelectionStyle:UITableViewCellEditingStyleNone];
 
-        return cell;
+    return cell;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
