@@ -21,6 +21,10 @@ Drag the included <code>KLHorizontalSelect.h, KLHorizontalSelect.m</code> files 
 
 * QuartzCore.framework
 
+Install via Cocoapods by adding the following line to your podfile
+
+	pod 'KLHorizontalSelect'
+
 ## Usage ##
 
 Import the required file and declare your controller to conform to the KLHorizontalSelect delegate to recieve callbacks
