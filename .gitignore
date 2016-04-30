@@ -2,3 +2,5 @@
 *.xcuserstate
 
 *.xcuserstate
+
+.DS_Store
